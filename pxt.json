@@ -1,0 +1,28 @@
+{
+    "name": "Yggdrasil",
+    "description": "Keys! Ways of transporting data all over the place.",
+    "dependencies": {
+        "device": "*",
+        "Theseus": "pub:36005-85452-80759-79723"
+    },
+    "files": [
+        "main.ts",
+        "README.md",
+        "assets.json",
+        "KeyHandler.ts",
+        "Keys.ts",
+        "BranchHandler.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "targetVersions": {
+        "target": "4.0.12",
+        "targetId": "arcade"
+    },
+    "supportedTargets": [
+        "arcade"
+    ],
+    "preferredEditor": "tsprj",
+    "languageRestriction": "javascript-only"
+}
