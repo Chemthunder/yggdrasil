@@ -11,7 +11,8 @@
         "assets.json",
         "KeyHandler.ts",
         "Keys.ts",
-        "BranchHandler.ts"
+        "BranchHandler.ts",
+        "docs.ts"
     ],
     "testFiles": [
         "test.ts"
