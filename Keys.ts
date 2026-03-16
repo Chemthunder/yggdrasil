@@ -70,3 +70,40 @@ class ImageKey extends Key {
         this._img = img;
     }
 }
+
+class MelodyKey extends Key {
+    _melody: music.Melody;
+
+    constructor(melody: music.Melody) {
+        super(melody);
+        this._melody = melody;
+    }
+}
+
+// THESEUS ----
+class InitializerKey extends Key {
+    _init: Initializer;
+
+    constructor(init: Initializer) {
+        super(init);
+        this._init = init;
+    }
+}
+
+class ItemKey extends Key {
+    _item: Item;
+
+    constructor(item: Item) {
+        super(item);
+        this._item = item;
+    }
+}
+
+class EngineKey extends Key {
+    _engine: Engine;
+
+    constructor(engine: Engine) {
+        super(engine);
+        this._engine = engine;
+    }
+}

@@ -5,10 +5,13 @@ class Branch {
     _secondKey: Key;
     _thirdKey: Key;
 
-    constructor(firstKey?: Key, secondKey?: Key, thirdKey?: Key) {
+    _keyList: Key[];
+
+    constructor(firstKey?: Key, secondKey?: Key, thirdKey?: Key, keyList?: Key[]) {
         this._firstKey = firstKey;
         this._secondKey = secondKey;
         this._thirdKey = thirdKey;
+        this._keyList = keyList;
     }
 
     get firstKey(): Key {
@@ -23,12 +26,21 @@ class Branch {
         return this._thirdKey;
     }
 
+    get keyList(): Key[] {
+        return this._keyList;
+    }
+
     unpack(): Key[] {
         const keysToUnpack: Key[] = [this.firstKey, this.secondKey, this.thirdKey];
         return keysToUnpack;
     }
 
-    unpackValue(num: number): Key {
+    unpackKeyList(): Key[] {
+        const unpackedKeys: Key[] = this.keyList;
+        return unpackedKeys;
+    }
+
+    unpackKeyAtValue(num: number): Key {
         let toExport: Key = null;
 
         try {
