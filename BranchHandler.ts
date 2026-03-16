@@ -5,13 +5,10 @@ class Branch {
     _secondKey: Key;
     _thirdKey: Key;
 
-    _keyList: Key[];
-
-    constructor(firstKey?: Key, secondKey?: Key, thirdKey?: Key, keyList?: Key[]) {
+    constructor(firstKey?: Key, secondKey?: Key, thirdKey?: Key) {
         this._firstKey = firstKey;
         this._secondKey = secondKey;
         this._thirdKey = thirdKey;
-        this._keyList = keyList;
     }
 
     get firstKey(): Key {
@@ -26,19 +23,12 @@ class Branch {
         return this._thirdKey;
     }
 
-    get keyList(): Key[] {
-        return this._keyList;
-    }
-
     unpack(): Key[] {
         const keysToUnpack: Key[] = [this.firstKey, this.secondKey, this.thirdKey];
         return keysToUnpack;
     }
 
-    unpackKeyList(): Key[] {
-        const unpackedKeys: Key[] = this.keyList;
-        return unpackedKeys;
-    }
+
 
     unpackKeyAtValue(num: number): Key {
         let toExport: Key = null;
@@ -64,6 +54,32 @@ class Branch {
             Yggdrasil.stop("Failure to unpack Key at value: " + num);
         }
 
+        return toExport;
+    }
+}
+
+class BranchList {
+    // storing multiple keys and transporting them.
+    _keyList: Key[];
+
+    constructor(keyList: Key[]) {
+        this._keyList = keyList;
+    }
+
+
+    get keyList(): Key[] {
+        return this._keyList;
+    }
+
+    unpack(): Key[] {
+        const keysToUnpack: Key[] = this.keyList;
+        return keysToUnpack;
+    }
+
+    unpackKeyAtValue(num: number): Key {
+        let toExport = null;
+
+        toExport = this.keyList[num];
         return toExport;
     }
 }
