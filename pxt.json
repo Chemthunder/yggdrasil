@@ -12,7 +12,8 @@
         "KeyHandler.ts",
         "Keys.ts",
         "BranchHandler.ts",
-        "docs.ts"
+        "docs.ts",
+        "spool.ts"
     ],
     "testFiles": [
         "test.ts"
