@@ -60,9 +60,9 @@ namespace yggdrasil {
     }
 
     /**
-         * Creates a new TilemapKey with the value inside.
-         * @param tile The tilemap to pack.
-        */
+     * Creates a new TilemapKey with the value inside.
+     * @param tile The tilemap to pack.
+    */
     //% block
     //% group="Keys"
     export function packTilemapKey(tile: tiles.TileMap): TilemapKey {
