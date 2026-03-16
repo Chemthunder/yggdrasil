@@ -1,3 +1,4 @@
+/* Central Key class. */
 class Key {
     _content: any;
 
@@ -17,7 +18,7 @@ class Key {
         try {
             return this.content;
         } catch {
-            Yggdrasil.stop("Failure to unpack Key.");
+            Yggdrasil.stop("Failure to unpack " + this);
         }
     }
 }

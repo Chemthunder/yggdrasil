@@ -1,1 +1,1 @@
-let Yggdrasil = theseus.createProject("Yggdrasil");
+const Yggdrasil = theseus.createProject("Yggdrasil");
