@@ -16,6 +16,12 @@ enum Colors {
     BLACK // 15
 }
 
+namespace SpriteKind {
+    export let Particle = SpriteKind.create();
+    export let MenuElement = SpriteKind.create();
+    export let None = SpriteKind.create();
+}
+
 namespace yggdrasil {
 
     /**
@@ -29,6 +35,7 @@ namespace yggdrasil {
             array.removeElement(value);
         }
     }
+
 
     /**
     * Parses a color from the Colors enum to a number.
@@ -123,3 +130,4 @@ namespace yggdrasil {
         }
     }
 }
+
