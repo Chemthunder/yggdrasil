@@ -31,9 +31,9 @@ namespace yggdrasil {
     }
 
     /**
-       * Parses a color from the Colors enum to a number.
-       * @param val The Color to parse.
-       */
+    * Parses a color from the Colors enum to a number.
+    * @param val The Color to parse.
+    */
     //% block
     //% group="Other"
     export function colorToNumber(val: Colors): number {
@@ -101,7 +101,6 @@ namespace yggdrasil {
                 break;
             }
         }
-
         return finalizedValue;
     }
 
