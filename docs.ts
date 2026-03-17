@@ -1,3 +1,6 @@
+const Yggdrasil = theseus.createProject("Yggdrasil");
+let shouldWarn: boolean = false;
+
 /**
  * Yggdrasil blocks
  */
@@ -170,6 +173,10 @@ namespace yggdrasil {
     export function buildSpool(contentToPack: any, spriteToAttachTo?: Sprite): Spool {
         let createdSpool = new Spool(contentToPack);
         if (spriteToAttachTo != null) createdSpool.addTo(spriteToAttachTo);
+
+        if (shouldWarn) {
+            Yggdrasil.log("Spools are experimental! Usage of experimental features may cause issues! To disable this message, set the 'shouldWarn' boolean to false.", InfoType.WARN);
+        }
         return createdSpool;
     }
 
@@ -183,6 +190,10 @@ namespace yggdrasil {
     export function buildKeySpool(contentToPack: Key, spriteToAttachTo?: Sprite): KeySpool {
         let createdSpool = new KeySpool(contentToPack);
         if (spriteToAttachTo != null) createdSpool.addTo(spriteToAttachTo);
+
+        if (shouldWarn) {
+            Yggdrasil.log("Spools are experimental! Usage of experimental features may cause issues! To disable this message, set the 'shouldWarn' boolean to false.", InfoType.WARN);
+        }
         return createdSpool;
     }
 }

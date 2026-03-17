@@ -6,7 +6,6 @@
         "Theseus": "pub:36005-85452-80759-79723"
     },
     "files": [
-        "main.ts",
         "README.md",
         "assets.json",
         "KeyHandler.ts",

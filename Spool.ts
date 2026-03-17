@@ -6,10 +6,10 @@ class Spool {
         this._content = content;
     }
 
-    get sprite(): Sprite {return this._attachedSprite;}
-    get content(): any { return this._content; }
+    private get sprite(): Sprite {return this._attachedSprite;}
+    private get content(): any { return this._content; }
     
-    set sprite(input: Sprite) {
+    private set sprite(input: Sprite) {
         this._attachedSprite = input;
     }
 
@@ -23,6 +23,20 @@ class Spool {
 
     getSprite(): Sprite {
         return this.sprite;
+    }
+
+    hasSpool(sprite: Sprite): boolean {
+        return this.getSprite() == sprite;
+    }
+
+    unravel(): any {
+        if (this.getSprite() != null) {
+            try {
+                return this.content;
+            } catch {
+                Yggdrasil.stop("Cannot unravel Spool: " + this);
+            }
+        }
     }
 }
 
@@ -34,10 +48,10 @@ class KeySpool {
         this._content = content;
     }
 
-    get sprite(): Sprite {return this._attachedSprite;}
-    get content(): Key { return this._content; }
+    private get sprite(): Sprite {return this._attachedSprite;}
+    private get content(): Key { return this._content; }
 
-    set sprite(input: Sprite) {
+    private set sprite(input: Sprite) {
         this._attachedSprite = input;
     }
 
@@ -51,5 +65,19 @@ class KeySpool {
 
     getSprite(): Sprite {
         return this.sprite;
+    }
+
+    hasSpool(sprite: Sprite): boolean {
+        return this.getSprite() == sprite;
+    }
+
+    unravel(): any {
+        if (this.getSprite() != null) {
+            try {
+                return this.content.unpack();
+            } catch {
+                Yggdrasil.stop("Cannot unravel Spool: " + this);
+            }
+        }
     }
 }
