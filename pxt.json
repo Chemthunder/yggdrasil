@@ -1,6 +1,6 @@
 {
     "name": "Yggdrasil",
-    "description": "Keys! Ways of transporting data all over the place.",
+    "description": "A large multi-use extension centered on data, and how you can use it.",
     "dependencies": {
         "device": "*",
         "Geode": "pub:54811-56924-17209-48782"
@@ -12,7 +12,8 @@
         "Keys.ts",
         "BranchHandler.ts",
         "docs.ts",
-        "Spool.ts"
+        "Spool.ts",
+        "Util.ts"
     ],
     "testFiles": [
         "test.ts"
