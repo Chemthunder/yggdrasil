@@ -1,7 +1,7 @@
 // tests go here; this will not be compiled when this package is used as an extension.
 
 namespace test {
-    let Test = theseus.createProject("Test");
+    let Test = geode.register("Test");
 
     let keyList: Key[] = [
         new StringKey("a"),

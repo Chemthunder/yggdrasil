@@ -1,4 +1,4 @@
-const Yggdrasil = theseus.createProject("Yggdrasil");
+const Yggdrasil = geode.register("Yggdrasil");
 let shouldWarn: boolean = false;
 
 /**
@@ -96,35 +96,13 @@ namespace yggdrasil {
     }
 
     /**
-     * Creates a new InitializerKey with the value inside.
-     * @param init The Initializer to pack.
+     * Creates a new ProjectKey with the value inside.
+     * @param project The Project to pack.
     */
     //% block
     //% group="Keys"
-    export function packInitializerKey(init: Initializer): InitializerKey {
-        let createdKey = new InitializerKey(init);
-        return createdKey;
-    }
-
-    /**
-     * Creates a new ItemKey with the value inside.
-     * @param item The item to pack.
-    */
-    //% block
-    //% group="Keys"
-    export function packItemKey(item: Item): ItemKey {
-        let createdKey = new ItemKey(item);
-        return createdKey;
-    }
-
-    /**
-     * Creates a new EngineKey with the value inside.
-     * @param eng The engine to pack.
-    */
-    //% block
-    //% group="Keys"
-    export function packEngineKey(eng: Engine): EngineKey {
-        let createdKey = new EngineKey(eng);
+    export function packProjectKey(project: Project): ProjectKey {
+        let createdKey = new ProjectKey(project);
         return createdKey;
     }
 
@@ -175,7 +153,7 @@ namespace yggdrasil {
         if (spriteToAttachTo != null) createdSpool.addTo(spriteToAttachTo);
 
         if (shouldWarn) {
-            Yggdrasil.log("Spools are experimental! Usage of experimental features may cause issues! To disable this message, set the 'shouldWarn' boolean to false.", InfoType.WARN);
+            Yggdrasil.log("Spools are experimental! Usage of experimental features may cause issues! To disable this message, set the 'shouldWarn' boolean to false.", LogTypes.WARN);
         }
         return createdSpool;
     }
@@ -192,7 +170,7 @@ namespace yggdrasil {
         if (spriteToAttachTo != null) createdSpool.addTo(spriteToAttachTo);
 
         if (shouldWarn) {
-            Yggdrasil.log("Spools are experimental! Usage of experimental features may cause issues! To disable this message, set the 'shouldWarn' boolean to false.", InfoType.WARN);
+            Yggdrasil.log("Spools are experimental! Usage of experimental features may cause issues! To disable this message, set the 'shouldWarn' boolean to false.", LogTypes.WARN);
         }
         return createdSpool;
     }

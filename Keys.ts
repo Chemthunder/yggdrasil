@@ -62,24 +62,10 @@ class MelodyKey extends Key {
         this._melody = melody;
     }
 }
-class InitializerKey extends Key {
-    _init: Initializer;
-    constructor(init: Initializer) {
+class ProjectKey extends Key {
+    _init: Project;
+    constructor(init: Project) {
         super(init);
         this._init = init;
-    }
-}
-class ItemKey extends Key {
-    _item: Item;
-    constructor(item: Item) {
-        super(item);
-        this._item = item;
-    }
-}
-class EngineKey extends Key {
-    _engine: Engine;
-    constructor(engine: Engine) {
-        super(engine);
-        this._engine = engine;
     }
 }
