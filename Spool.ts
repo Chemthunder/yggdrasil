@@ -1,8 +1,25 @@
-class Spool {
+class BaseSpool { // used for compat
+    _name: string;
+
+    constructor(name: string) {
+        this._name = name;
+    }
+
+    get name(): string {
+        return this._name;
+    }
+
+    set name(str: string) {
+        this.name = str;
+    }
+}
+
+class Spool extends BaseSpool {
     _attachedSprite: Sprite;
     _content: any;
 
     constructor(content: any) {
+        super("Spool");
         this._content = content;
     }
 
@@ -40,11 +57,12 @@ class Spool {
     }
 }
 
-class KeySpool {
+class KeySpool extends BaseSpool {
     _attachedSprite: Sprite;
     _content: Key;
 
     constructor(content: Key) {
+        super("KeySpool");
         this._content = content;
     }
 
