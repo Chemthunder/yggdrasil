@@ -6,9 +6,7 @@ class Key {
         this._content = content;
     }
 
-    private get content(): any {
-        return this._content;
-    }
+    private get content(): any {return this._content;}
 
     private set content(input: any) {
         this.content = input;

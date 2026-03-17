@@ -1,7 +1,7 @@
 /**
  * Yggdrasil blocks
  */
-//% groups='["Keys", "Branches"]'
+//% groups='["Keys", "Branches", "Spools"]'
 //% weight=30 color=#67cfa4 icon="\uf0ac"
 namespace yggdrasil {
     /**
@@ -136,9 +136,6 @@ namespace yggdrasil {
         return createdKey;
     }
 
-
-    // bracnh ----
-
     /**
      * Creates a Branch with the values given.
      * @param key1 The first key to pack.
@@ -161,5 +158,31 @@ namespace yggdrasil {
     export function registerBranchWithList(keyList: Key[]): BranchList {
         let createdBranch = new BranchList(keyList);
         return createdBranch;
+    }
+
+    /**
+     * Creates a Spool with the values given.
+     * @param contentToPack The data to pack into the Spool.
+     * @param spriteToAttachTo The sprite to attach the Spool to, if needed. Optional.
+    */
+    //% block
+    //% group="Spools"
+    export function buildSpool(contentToPack: any, spriteToAttachTo?: Sprite): Spool {
+        let createdSpool = new Spool(contentToPack);
+        if (spriteToAttachTo != null) createdSpool.addTo(spriteToAttachTo);
+        return createdSpool;
+    }
+
+    /**
+    * Creates a Spool with the values given.
+    * @param contentToPack The key to pack into the Spool.
+    * @param spriteToAttachTo The sprite to attach the Spool to, if needed. Optional.
+    */
+    //% block
+    //% group="Spools"
+    export function buildKeySpool(contentToPack: Key, spriteToAttachTo?: Sprite): KeySpool {
+        let createdSpool = new KeySpool(contentToPack);
+        if (spriteToAttachTo != null) createdSpool.addTo(spriteToAttachTo);
+        return createdSpool;
     }
 }

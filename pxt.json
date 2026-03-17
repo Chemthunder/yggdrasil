@@ -13,7 +13,7 @@
         "Keys.ts",
         "BranchHandler.ts",
         "docs.ts",
-        "spool.ts"
+        "Spool.ts"
     ],
     "testFiles": [
         "test.ts"

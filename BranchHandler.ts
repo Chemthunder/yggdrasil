@@ -9,17 +9,9 @@ class Branch {
         this._thirdKey = thirdKey;
     }
 
-    get firstKey(): Key {
-        return this._firstKey;
-    }
-
-    get secondKey(): Key {
-        return this._secondKey;
-    }
-
-    get thirdKey(): Key {
-        return this._thirdKey;
-    }
+    get firstKey(): Key {return this._firstKey;}
+    get secondKey(): Key {return this._secondKey;}
+    get thirdKey(): Key {return this._thirdKey;}
 
     unpack(): Key[] {
         const keysToUnpack: Key[] = [this.firstKey, this.secondKey, this.thirdKey];
@@ -58,9 +50,7 @@ class BranchList {
         this._keyList = keyList;
     }
 
-    get keyList(): Key[] {
-        return this._keyList;
-    }
+    get keyList(): Key[] {return this._keyList;}
 
     unpack(): Key[] {
         const keysToUnpack: Key[] = this.keyList;
