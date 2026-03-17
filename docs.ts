@@ -4,7 +4,7 @@ let shouldWarn: boolean = false;
 /**
  * Yggdrasil blocks
  */
-//% groups='["Keys", "Branches", "Spools"]'
+//% groups='["Keys", "Branches", "Spools", "Other"]'
 //% weight=30 color=#67cfa4 icon="\uf0ac"
 namespace yggdrasil {
     /**
