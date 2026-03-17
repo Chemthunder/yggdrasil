@@ -13,6 +13,13 @@ class NumberKey extends Key {
         this._num = num;
     }
 }
+class BooleanKey extends Key {
+    _bool: boolean;
+    constructor(bool: boolean) {
+        super(bool);
+        this._bool = bool;
+    }
+}
 class ArrayKey extends Key {
     _array: any[];
     constructor(array: any[]) {
