@@ -3,7 +3,7 @@
     "description": "Keys! Ways of transporting data all over the place.",
     "dependencies": {
         "device": "*",
-        "Geode": "pub:44561-72775-66820-04014"
+        "Geode": "pub:54811-56924-17209-48782"
     },
     "files": [
         "README.md",
