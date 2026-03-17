@@ -30,6 +30,17 @@ namespace yggdrasil {
     }
 
     /**
+     * Creates a new BooleanKey with the value inside.
+     * @param bool The boolean to pack.
+    */
+    //% block
+    //% group="Keys"
+    export function packBooleanKey(bool: boolean): BooleanKey {
+        let createdKey = new BooleanKey(bool);
+        return createdKey;
+    }
+
+    /**
      * Creates a new ArrayKey with the value inside.
      * @param array The array to pack.
     */
