@@ -1,36 +1,3 @@
-enum Colors {
-    //% block="White"
-    WHITE, // 1
-    //% block="Red"
-    RED, // 2
-    //% block="Pink"
-    PINK, // 3
-    //% block="Orange"
-    ORANGE, // 4
-    //% block="Yellow"
-    YELLOW, // 5
-    //% block="Dark Cyan"
-    DARK_CYAN, // 6
-    //% block="Green"
-    GREEN, // 7
-    //% block="Dark Blue"
-    DARK_BLUE, // 8
-    //% block="Cyan"
-    CYAN, // 9
-    //% block="Purple"
-    PURPLE, // 10
-    //% block="Light Purple"
-    LIGHT_PURPLE, // 11
-    //% block="Dark Purple"
-    DARK_PURPLE, // 12
-    //% block="Pale"
-    SKIN, // 13
-    //% block="Brown"
-    BROWN, // 14
-    //% block="Black"
-    BLACK // 15
-}
-
 namespace SpriteKind {
     export let Particle = SpriteKind.create();
     export let MenuElement = SpriteKind.create();
@@ -38,6 +5,39 @@ namespace SpriteKind {
 }
 
 namespace yggdrasil {
+
+    export enum Colors {
+        //% block="White"
+        WHITE, // 1
+        //% block="Red"
+        RED, // 2
+        //% block="Pink"
+        PINK, // 3
+        //% block="Orange"
+        ORANGE, // 4
+        //% block="Yellow"
+        YELLOW, // 5
+        //% block="Dark Cyan"
+        DARK_CYAN, // 6
+        //% block="Green"
+        GREEN, // 7
+        //% block="Dark Blue"
+        DARK_BLUE, // 8
+        //% block="Cyan"
+        CYAN, // 9
+        //% block="Purple"
+        PURPLE, // 10
+        //% block="Light Purple"
+        LIGHT_PURPLE, // 11
+        //% block="Dark Purple"
+        DARK_PURPLE, // 12
+        //% block="Pale"
+        SKIN, // 13
+        //% block="Brown"
+        BROWN, // 14
+        //% block="Black"
+        BLACK // 15
+    }
 
     /**
     * Clears a given array.
@@ -51,7 +51,6 @@ namespace yggdrasil {
             array.removeElement(value);
         }
     }
-
 
     /**
     * Parses a color from the Colors enum to a number.

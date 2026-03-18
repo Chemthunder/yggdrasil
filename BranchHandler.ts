@@ -13,13 +13,13 @@ class Branch {
     get secondKey(): Key {return this._secondKey;}
     get thirdKey(): Key {return this._thirdKey;}
 
-    unpack(): Key[] {
+    public unpack(): Key[] {
         const keysToUnpack: Key[] = [this.firstKey, this.secondKey, this.thirdKey];
         if (keysToUnpack == null) Yggdrasil.stop("Failure to unpack keys from " + this);
         return keysToUnpack;
     }
 
-    unpackKeyAtValue(num: number): Key {
+    public unpackKeyAtValue(num: number): Key {
         let toExport: Key;
         try {
             switch (num) {
@@ -52,13 +52,13 @@ class BranchList {
 
     get keyList(): Key[] {return this._keyList;}
 
-    unpack(): Key[] {
+    public unpack(): Key[] {
         const keysToUnpack: Key[] = this.keyList;
         if (keysToUnpack == null) Yggdrasil.stop("Failure to unpack keys from Branch: " + this);
         return keysToUnpack;
     }
 
-    unpackKeyAtValue(num: number): Key {
+    public unpackKeyAtValue(num: number): Key {
         let toExport: Key = this.keyList[num];
         if (toExport == null) Yggdrasil.stop("Failure to unpack key list from Branch: " + this);
         return toExport;

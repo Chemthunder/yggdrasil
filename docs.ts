@@ -13,8 +13,7 @@ namespace yggdrasil {
      */
     //% block="pack string key with $string"
     //% blockId=yggstringkey
-    //% str.defl=""
-    //% str.shadow=variables_get
+    //% weight=97
     //% group="Keys"
     export function packStringKey(str: string): StringKey {
         let createdKey = new StringKey(str);
@@ -27,8 +26,7 @@ namespace yggdrasil {
     */
     //% block="pack number key with $number"
     //% blockId=yggnumberkey
-    //% num.defl=0
-    //% num.shadow=variables_get
+    //% weight=96
     //% group="Keys"
     export function packNumberKey(num: number): NumberKey {
         let createdKey = new NumberKey(num);
@@ -41,8 +39,7 @@ namespace yggdrasil {
     */
     //% block="pack boolean key with $boolean"
     //% blockId=yggbooleankey
-    //% bool.defl=false
-    //% bool.shadow=variables_get
+    //% weight=95
     //% group="Keys"
     export function packBooleanKey(bool: boolean): BooleanKey {
         let createdKey = new BooleanKey(bool);
@@ -55,8 +52,6 @@ namespace yggdrasil {
     */
     //% block="pack array key with $array"
     //% blockId=yggarraykey
-    //% array.defl=myArray
-    //% array.shadow=variables_get
     //% group="Keys"
     export function packArrayKey(array: any[]): ArrayKey {
         let createdKey = new ArrayKey(array);
@@ -69,8 +64,7 @@ namespace yggdrasil {
     */
     //% block="pack sprite key with $sprite"
     //% blockId=yggspritekey
-    //% sprite.defl=mySprite
-    //% sprite.shadow=variables_get
+    //% weight=94
     //% group="Keys"
     export function packSpriteKey(sprite: Sprite): SpriteKey {
         let createdKey = new SpriteKey(sprite);
@@ -83,6 +77,8 @@ namespace yggdrasil {
     */
     //% block="pack function key with $func"
     //% blockId=yggfunctionkey
+    //% weight=56
+    //% advanced=true
     //% group="Keys"
     export function packFunctionKey(func: Function): FunctionKey {
         let createdKey = new FunctionKey(func);
@@ -95,6 +91,8 @@ namespace yggdrasil {
     */
     //% block="pack tilemap key with $tilemap"
     //% blockId=yggtilemapkey
+    //% weight=48
+    //% advanced=true
     //% group="Keys"
     export function packTilemapKey(tile: tiles.TileMap): TilemapKey {
         let createdKey = new TilemapKey(tile);
@@ -107,8 +105,7 @@ namespace yggdrasil {
     */
     //% block="pack image key with $img"
     //% blockId=yggimagekey
-    //% img.defl=myImage
-    //% img.shadow=variables_get
+    //% weight=93
     //% group="Keys"
     export function packImageKey(img: Image): ImageKey {
         let createdKey = new ImageKey(img);
@@ -121,6 +118,8 @@ namespace yggdrasil {
     */
     //% block="pack melody key with $melody"
     //% blockId=yggmelodykey
+    //% advanced=true
+    //% weight=50
     //% group="Keys"
     export function packMelodyKey(melody: music.Melody): MelodyKey {
         let createdKey = new MelodyKey(melody);
@@ -134,6 +133,7 @@ namespace yggdrasil {
     //% block="pack Project key with $project"
     //% blockId=yggprojectkey
     //% advanced=true
+    //% weight=53
     //% group="Keys"
     export function packProjectKey(project: Project): ProjectKey {
         let createdKey = new ProjectKey(project);
@@ -142,10 +142,13 @@ namespace yggdrasil {
 
     /**
      * Creates a new MiscKey with the value inside.
+     * MiscKeys can contain any form of variable.
      * @param val The value to pack.
     */
     //% block="pack misc key with $value"
     //% blockId=yggmisckey
+    //% advanced=true
+    //% weight=55
     //% group="Keys"
     export function packMiscKey(val: any): MiscKey {
         let createdKey = new MiscKey(val);
@@ -185,8 +188,6 @@ namespace yggdrasil {
     */
     //% block="build a spool with $value attached to $sprite"
     //% blockId=yggspooldefault
-    //% sprite.defl=mySprite
-    //% sprite.shadow=variables_get
     //% advanced=true
     //% group="Spools"
     export function buildSpool(contentToPack: any, spriteToAttachTo?: Sprite): Spool {
@@ -206,8 +207,6 @@ namespace yggdrasil {
     */
     //% block="build a spool with $key attached to $sprite"
     //% blockId=yggspoolkey
-    //% sprite.defl=mySprite
-    //% sprite.shadow=variables_get
     //% advanced=true
     //% group="Spools"
     export function buildKeySpool(contentToPack: Key, sprite?: Sprite): KeySpool {

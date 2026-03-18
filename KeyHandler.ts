@@ -12,7 +12,7 @@ class Key {
         this.content = input;
     }
 
-    unpack(): any {
+    public unpack(): any {
         try {
             return this.content;
         } catch {
