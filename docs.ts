@@ -14,6 +14,7 @@ namespace yggdrasil {
     //% block="pack string key with $string"
     //% blockId=yggstringkey
     //% str.defl=""
+    //% str.shadow=variables_get
     //% group="Keys"
     export function packStringKey(str: string): StringKey {
         let createdKey = new StringKey(str);
@@ -27,6 +28,7 @@ namespace yggdrasil {
     //% block="pack number key with $number"
     //% blockId=yggnumberkey
     //% num.defl=0
+    //% num.shadow=variables_get
     //% group="Keys"
     export function packNumberKey(num: number): NumberKey {
         let createdKey = new NumberKey(num);
@@ -40,6 +42,7 @@ namespace yggdrasil {
     //% block="pack boolean key with $boolean"
     //% blockId=yggbooleankey
     //% bool.defl=false
+    //% bool.shadow=variables_get
     //% group="Keys"
     export function packBooleanKey(bool: boolean): BooleanKey {
         let createdKey = new BooleanKey(bool);
@@ -53,6 +56,7 @@ namespace yggdrasil {
     //% block="pack array key with $array"
     //% blockId=yggarraykey
     //% array.defl=myArray
+    //% array.shadow=variables_get
     //% group="Keys"
     export function packArrayKey(array: any[]): ArrayKey {
         let createdKey = new ArrayKey(array);
@@ -66,6 +70,7 @@ namespace yggdrasil {
     //% block="pack sprite key with $sprite"
     //% blockId=yggspritekey
     //% sprite.defl=mySprite
+    //% sprite.shadow=variables_get
     //% group="Keys"
     export function packSpriteKey(sprite: Sprite): SpriteKey {
         let createdKey = new SpriteKey(sprite);
@@ -76,9 +81,10 @@ namespace yggdrasil {
      * Creates a new FunctionKey with the value inside.
      * @param func The function to pack.
     */
-    //% block="pack function key with $fun"
+    //% block="pack function key with $func"
     //% blockId=yggfunctionkey
     //% func.defl=myFunction
+    //% func.shadow=variables_get
     //% group="Keys"
     export function packFunctionKey(func: Function): FunctionKey {
         let createdKey = new FunctionKey(func);
@@ -91,7 +97,6 @@ namespace yggdrasil {
     */
     //% block="pack tilemap key with $tilemap"
     //% blockId=yggtilemapkey
-    //% tile.defl=myTilemap
     //% group="Keys"
     export function packTilemapKey(tile: tiles.TileMap): TilemapKey {
         let createdKey = new TilemapKey(tile);
