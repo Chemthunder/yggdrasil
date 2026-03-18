@@ -32,11 +32,13 @@ enum Colors {
 }
 
 namespace SpriteKind {
+        //% block="Particle"
     export let Particle = SpriteKind.create();
+        //% block="Menu Element"
     export let MenuElement = SpriteKind.create();
+        //% block="None"
     export let None = SpriteKind.create();
 }
-
 
 namespace yggdrasil {
 
@@ -136,8 +138,8 @@ namespace yggdrasil {
        * @param fontColor The color of the font.
        * @param lifeImage The image for the lives in the UI.
        */
-    //% block="set UI"
-    //% blockId="yggdrasilsetui"
+    //% block="set UI with $borderColor, $backgroundColor, $fontColor, and $lifeImage"
+    //% blockId=yggdrasilsetui
     //% group="Other"
     export function setUi(borderColor: Colors, backgroundColor: Colors, fontColor: Colors, lifeImage?: Image) {
         info.setBorderColor(colorToNumber(borderColor));

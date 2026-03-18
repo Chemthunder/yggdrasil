@@ -11,8 +11,9 @@ namespace yggdrasil {
      * Creates a new StringKey with the value inside.
      * @param str The string to pack.
      */
-    //% block="pack String Key with $string"
-    //% blockId="yggstringkey"
+    //% block="pack string key with $string"
+    //% blockId=yggstringkey
+    //% str.defl=""
     //% group="Keys"
     export function packStringKey(str: string): StringKey {
         let createdKey = new StringKey(str);
@@ -23,7 +24,9 @@ namespace yggdrasil {
      * Creates a new NumberKey with the value inside.
      * @param num The number to pack.
     */
-    //% block
+    //% block="pack number key with $number"
+    //% blockId=yggnumberkey
+    //% num.defl=0
     //% group="Keys"
     export function packNumberKey(num: number): NumberKey {
         let createdKey = new NumberKey(num);
@@ -34,7 +37,9 @@ namespace yggdrasil {
      * Creates a new BooleanKey with the value inside.
      * @param bool The boolean to pack.
     */
-    //% block
+    //% block="pack boolean key with $boolean"
+    //% blockId=yggbooleankey
+    //% bool.defl=false
     //% group="Keys"
     export function packBooleanKey(bool: boolean): BooleanKey {
         let createdKey = new BooleanKey(bool);
@@ -45,7 +50,9 @@ namespace yggdrasil {
      * Creates a new ArrayKey with the value inside.
      * @param array The array to pack.
     */
-    //% block
+    //% block="pack array key with $array"
+    //% blockId=yggarraykey
+    //% array.defl=myArray
     //% group="Keys"
     export function packArrayKey(array: any[]): ArrayKey {
         let createdKey = new ArrayKey(array);
@@ -56,10 +63,12 @@ namespace yggdrasil {
      * Creates a new SpriteKey with the value inside.
      * @param spr The sprite to pack.
     */
-    //% block
+    //% block="pack sprite key with $sprite"
+    //% blockId=yggspritekey
+    //% sprite.defl=mySprite
     //% group="Keys"
-    export function packSpriteKey(spr: Sprite): SpriteKey {
-        let createdKey = new SpriteKey(spr);
+    export function packSpriteKey(sprite: Sprite): SpriteKey {
+        let createdKey = new SpriteKey(sprite);
         return createdKey;
     }
 
@@ -67,7 +76,9 @@ namespace yggdrasil {
      * Creates a new FunctionKey with the value inside.
      * @param func The function to pack.
     */
-    //% block
+    //% block="pack function key with $fun"
+    //% blockId=yggfunctionkey
+    //% func.defl=myFunction
     //% group="Keys"
     export function packFunctionKey(func: Function): FunctionKey {
         let createdKey = new FunctionKey(func);
@@ -78,7 +89,9 @@ namespace yggdrasil {
      * Creates a new TilemapKey with the value inside.
      * @param tile The tilemap to pack.
     */
-    //% block
+    //% block="pack tilemap key with $tilemap"
+    //% blockId=yggtilemapkey
+    //% tile.defl=myTilemap
     //% group="Keys"
     export function packTilemapKey(tile: tiles.TileMap): TilemapKey {
         let createdKey = new TilemapKey(tile);
@@ -89,7 +102,9 @@ namespace yggdrasil {
      * Creates a new ImageKey with the value inside.
      * @param img The image to pack.
     */
-    //% block
+    //% block="pack image key with $img"
+    //% blockId=yggimagekey
+    //% img.defl=myImage
     //% group="Keys"
     export function packImageKey(img: Image): ImageKey {
         let createdKey = new ImageKey(img);
@@ -100,10 +115,12 @@ namespace yggdrasil {
      * Creates a new MelodyKey with the value inside.
      * @param mel The melody to pack.
     */
-    //% block
+    //% block="pack melody key with $melody"
+    //% blockId=yggmelodykey
+    //% melody.defl=myMelody
     //% group="Keys"
-    export function packMelodyKey(mel: music.Melody): MelodyKey {
-        let createdKey = new MelodyKey(mel);
+    export function packMelodyKey(melody: music.Melody): MelodyKey {
+        let createdKey = new MelodyKey(melody);
         return createdKey;
     }
 
@@ -111,7 +128,10 @@ namespace yggdrasil {
      * Creates a new ProjectKey with the value inside.
      * @param project The Project to pack.
     */
-    //% block
+    //% block="pack Project key with $project"
+    //% blockId=yggprojectkey
+    //% project.defl=MyProject
+    //% advanced=true
     //% group="Keys"
     export function packProjectKey(project: Project): ProjectKey {
         let createdKey = new ProjectKey(project);
@@ -122,7 +142,8 @@ namespace yggdrasil {
      * Creates a new MiscKey with the value inside.
      * @param val The value to pack.
     */
-    //% block
+    //% block="pack misc key with $value"
+    //% blockId=yggmisckey
     //% group="Keys"
     export function packMiscKey(val: any): MiscKey {
         let createdKey = new MiscKey(val);
@@ -135,7 +156,8 @@ namespace yggdrasil {
      * @param key2 The second key to pack.
      * @param key3 The third key to pack.
     */
-    //% block
+    //% block="register a branch with $key1, $key2, $key3"
+    //% blockId=yggbranchdefault
     //% group="Branches"
     export function registerBranch(key1?: Key, key2?: Key, key3?: Key): Branch {
         let createdBranch = new Branch(key1, key2, key3);
@@ -146,7 +168,8 @@ namespace yggdrasil {
      * Creates a Branch with the list given.
      * @param keyList The list to pack.
     */
-    //% block
+    //% block="register a branch with a $keyList"
+    //% blockId=yggbranchlist
     //% group="Branches"
     export function registerBranchWithList(keyList: Key[]): BranchList {
         let createdBranch = new BranchList(keyList);
@@ -158,7 +181,9 @@ namespace yggdrasil {
      * @param contentToPack The data to pack into the Spool.
      * @param spriteToAttachTo The sprite to attach the Spool to, if needed. Optional.
     */
-    //% block
+    //% block="build a spool with $value attached to $sprite"
+    //% blockId=yggspooldefault
+    //% advanced=true
     //% group="Spools"
     export function buildSpool(contentToPack: any, spriteToAttachTo?: Sprite): Spool {
         let createdSpool = new Spool(contentToPack);
@@ -173,13 +198,16 @@ namespace yggdrasil {
     /**
     * Creates a Spool with the values given.
     * @param contentToPack The key to pack into the Spool.
-    * @param spriteToAttachTo The sprite to attach the Spool to, if needed. Optional.
+    * @param sprite The sprite to attach the Spool to, if needed. Optional.
     */
-    //% block
+    //% block="build a spool with $key attached to $sprite"
+    //% blockId=yggspoolkey
+    //% sprite.defl=mySprite
+    //% advanced=true
     //% group="Spools"
-    export function buildKeySpool(contentToPack: Key, spriteToAttachTo?: Sprite): KeySpool {
+    export function buildKeySpool(contentToPack: Key, sprite?: Sprite): KeySpool {
         let createdSpool = new KeySpool(contentToPack);
-        if (spriteToAttachTo != null) createdSpool.addTo(spriteToAttachTo);
+        if (sprite != null) createdSpool.addTo(sprite);
 
         if (shouldWarn) {
             Yggdrasil.log("Spools are experimental! Usage of experimental features may cause issues! To disable this message, set the 'shouldWarn' boolean to false.", LogTypes.WARN);
