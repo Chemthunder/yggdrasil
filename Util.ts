@@ -1,18 +1,33 @@
 enum Colors {
+    //% block="White"
     WHITE, // 1
+    //% block="Red"
     RED, // 2
+    //% block="Pink"
     PINK, // 3
+    //% block="Orange"
     ORANGE, // 4
+    //% block="Yellow"
     YELLOW, // 5
+    //% block="Dark Cyan"
     DARK_CYAN, // 6
+    //% block="Green"
     GREEN, // 7
+    //% block="Dark Blue"
     DARK_BLUE, // 8
+    //% block="Cyan"
     CYAN, // 9
+    //% block="Purple"
     PURPLE, // 10
+    //% block="Light Purple"
     LIGHT_PURPLE, // 11
+    //% block="Dark Purple"
     DARK_PURPLE, // 12
+    //% block="Pale"
     SKIN, // 13
+    //% block="Brown"
     BROWN, // 14
+    //% block="Black"
     BLACK // 15
 }
 
@@ -22,13 +37,15 @@ namespace SpriteKind {
     export let None = SpriteKind.create();
 }
 
+
 namespace yggdrasil {
 
     /**
     * Clears a given array.
     * @param array The array to clear.
     */
-    //% block
+    //% block="clear $array"
+    //% blockId=yggdrasilcleararray
     //% group="Other"
     export function clearArray(array: any[]) {
         for (let value of array) {
@@ -41,13 +58,14 @@ namespace yggdrasil {
     * Parses a color from the Colors enum to a number.
     * @param val The Color to parse.
     */
-    //% block
+    //% block="color to number"
+    //% blockId=yggdrasilcolortonumber
     //% group="Other"
     export function colorToNumber(val: Colors): number {
         let finalizedValue;
 
         switch (val) {
-            case(Colors.WHITE): {
+            case (Colors.WHITE): {
                 finalizedValue = 1;
                 break;
             }
@@ -118,7 +136,8 @@ namespace yggdrasil {
        * @param fontColor The color of the font.
        * @param lifeImage The image for the lives in the UI.
        */
-    //% block
+    //% block="set UI"
+    //% blockId="yggdrasilsetui"
     //% group="Other"
     export function setUi(borderColor: Colors, backgroundColor: Colors, fontColor: Colors, lifeImage?: Image) {
         info.setBorderColor(colorToNumber(borderColor));

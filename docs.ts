@@ -2,7 +2,7 @@ const Yggdrasil = geode.register("Yggdrasil");
 let shouldWarn: boolean = false;
 
 /**
- * Yggdrasil blocks
+ * Yggdrasil allows for easy transfers of variables, and so much more.
  */
 //% groups='["Keys", "Branches", "Spools", "Other"]'
 //% weight=30 color=#67cfa4 icon="\uf0ac"
@@ -11,7 +11,8 @@ namespace yggdrasil {
      * Creates a new StringKey with the value inside.
      * @param str The string to pack.
      */
-    //% block
+    //% block="pack String Key with $string"
+    //% blockId="yggstringkey"
     //% group="Keys"
     export function packStringKey(str: string): StringKey {
         let createdKey = new StringKey(str);
