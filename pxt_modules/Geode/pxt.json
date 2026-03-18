@@ -1,0 +1,24 @@
+{
+    "name": "Geode",
+    "description": "woah",
+    "dependencies": {
+        "device": "*"
+    },
+    "files": [
+        "README.md",
+        "assets.json",
+        "proj.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "targetVersions": {
+        "target": "4.0.12",
+        "targetId": "arcade"
+    },
+    "supportedTargets": [
+        "arcade"
+    ],
+    "preferredEditor": "tsprj",
+    "languageRestriction": "javascript-only"
+}
