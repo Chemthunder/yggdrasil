@@ -32,11 +32,8 @@ enum Colors {
 }
 
 namespace SpriteKind {
-        //% block="Particle"
     export let Particle = SpriteKind.create();
-        //% block="Menu Element"
     export let MenuElement = SpriteKind.create();
-        //% block="None"
     export let None = SpriteKind.create();
 }
 
@@ -60,7 +57,7 @@ namespace yggdrasil {
     * Parses a color from the Colors enum to a number.
     * @param val The Color to parse.
     */
-    //% block="color to number"
+    //% block="$color to number"
     //% blockId=yggdrasilcolortonumber
     //% group="Other"
     export function colorToNumber(val: Colors): number {
