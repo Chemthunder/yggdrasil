@@ -1,6 +1,14 @@
 const Yggdrasil = geode.register("Yggdrasil");
 let shouldWarn: boolean = false;
 
+// group="Create"
+// blockId=spritescreate block="sprite %img=screen_image_picker of kind %kind=spritekind"
+// expandableArgumentMode=toggle
+// blockSetVariable=mySprite
+// weight=100 help=sprites/create
+
+
+
 /**
  * Yggdrasil allows for easy transfers of variables, and so much more.
  */
@@ -11,9 +19,12 @@ namespace yggdrasil {
      * Creates a new StringKey with the value inside.
      * @param str The string to pack.
      */
-    //% block="pack string key with $string"
+    //% block="pack string key with $str"
     //% blockId=yggstringkey
+    //% str.defl=contents
     //% weight=97
+    //% blockSetVariable=myStringKey
+    //% expandableArgumentMode=toggle
     //% group="Keys"
     export function packStringKey(str: string): StringKey {
         let createdKey = new StringKey(str);
@@ -24,9 +35,12 @@ namespace yggdrasil {
      * Creates a new NumberKey with the value inside.
      * @param num The number to pack.
     */
-    //% block="pack number key with $number"
+    //% block="pack number key with $num"
     //% blockId=yggnumberkey
+    //% num.defl=0
     //% weight=96
+    //% blockSetVariable=myNumberKey
+    //% expandableArgumentMode=toggle
     //% group="Keys"
     export function packNumberKey(num: number): NumberKey {
         let createdKey = new NumberKey(num);
@@ -37,9 +51,12 @@ namespace yggdrasil {
      * Creates a new BooleanKey with the value inside.
      * @param bool The boolean to pack.
     */
-    //% block="pack boolean key with $boolean"
+    //% block="pack boolean key with $bool"
     //% blockId=yggbooleankey
+    //% bool.defl=true
     //% weight=95
+    //% blockSetVariable=myBooleanKey
+    //% expandableArgumentMode=toggle
     //% group="Keys"
     export function packBooleanKey(bool: boolean): BooleanKey {
         let createdKey = new BooleanKey(bool);
@@ -52,6 +69,9 @@ namespace yggdrasil {
     */
     //% block="pack array key with $array"
     //% blockId=yggarraykey
+    //% array.defl=myArray
+    //% blockSetVariable=myArrayKey
+    //% expandableArgumentMode=toggle
     //% group="Keys"
     export function packArrayKey(array: any[]): ArrayKey {
         let createdKey = new ArrayKey(array);
@@ -64,7 +84,10 @@ namespace yggdrasil {
     */
     //% block="pack sprite key with $sprite"
     //% blockId=yggspritekey
+    //% sprite.defl=mySprite
     //% weight=94
+    //% blockSetVariable=mySpriteKey
+    //% expandableArgumentMode=toggle
     //% group="Keys"
     export function packSpriteKey(sprite: Sprite): SpriteKey {
         let createdKey = new SpriteKey(sprite);
@@ -77,8 +100,10 @@ namespace yggdrasil {
     */
     //% block="pack function key with $func"
     //% blockId=yggfunctionkey
+    //% func.defl=myFunction
     //% weight=56
-    //% advanced=true
+    //% blockSetVariable=myFunctionKey
+    //% expandableArgumentMode=toggle
     //% group="Keys"
     export function packFunctionKey(func: Function): FunctionKey {
         let createdKey = new FunctionKey(func);
@@ -91,8 +116,10 @@ namespace yggdrasil {
     */
     //% block="pack tilemap key with $tilemap"
     //% blockId=yggtilemapkey
+    //% tile.defl=myTilemap
     //% weight=48
-    //% advanced=true
+    //% blockSetVariable=myTilemapKey
+    //% expandableArgumentMode=toggle
     //% group="Keys"
     export function packTilemapKey(tile: tiles.TileMap): TilemapKey {
         let createdKey = new TilemapKey(tile);
@@ -105,7 +132,10 @@ namespace yggdrasil {
     */
     //% block="pack image key with $img"
     //% blockId=yggimagekey
+    //% img.defl=myImage
     //% weight=93
+    //% blockSetVariable=myImageKey
+    //% expandableArgumentMode=toggle
     //% group="Keys"
     export function packImageKey(img: Image): ImageKey {
         let createdKey = new ImageKey(img);
@@ -118,8 +148,10 @@ namespace yggdrasil {
     */
     //% block="pack melody key with $melody"
     //% blockId=yggmelodykey
-    //% advanced=true
+    //% melody.defl=myMelody
     //% weight=50
+    //% blockSetVariable=myMelodyKey
+    //% expandableArgumentMode=toggle
     //% group="Keys"
     export function packMelodyKey(melody: music.Melody): MelodyKey {
         let createdKey = new MelodyKey(melody);
@@ -132,8 +164,11 @@ namespace yggdrasil {
     */
     //% block="pack Project key with $project"
     //% blockId=yggprojectkey
+    //% project.defl=Project
     //% advanced=true
     //% weight=53
+    //% blockSetVariable=myProjectKey
+    //% expandableArgumentMode=toggle
     //% group="Keys"
     export function packProjectKey(project: Project): ProjectKey {
         let createdKey = new ProjectKey(project);
@@ -147,8 +182,11 @@ namespace yggdrasil {
     */
     //% block="pack misc key with $value"
     //% blockId=yggmisckey
+    //% val.defl=myValue
     //% advanced=true
     //% weight=55
+    //% blockSetVariable=myMiscKey
+    //% expandableArgumentMode=toggle
     //% group="Keys"
     export function packMiscKey(val: any): MiscKey {
         let createdKey = new MiscKey(val);
@@ -163,6 +201,11 @@ namespace yggdrasil {
     */
     //% block="register a branch with $key1, $key2, $key3"
     //% blockId=yggbranchdefault
+    //% key1.defl=myKey
+    //% key2.defl=myKey2
+    //% key3.defl=myKey3
+    //% blockSetVariable=myBranch
+    //% expandableArgumentMode=toggle
     //% group="Branches"
     export function registerBranch(key1?: Key, key2?: Key, key3?: Key): Branch {
         let createdBranch = new Branch(key1, key2, key3);
@@ -175,6 +218,9 @@ namespace yggdrasil {
     */
     //% block="register a branch with a $keyList"
     //% blockId=yggbranchlist
+    //% keyList.defl=myKeyList
+    //% blockSetVariable=myBranch
+    //% expandableArgumentMode=toggle
     //% group="Branches"
     export function registerBranchWithList(keyList: Key[]): BranchList {
         let createdBranch = new BranchList(keyList);
@@ -188,11 +234,14 @@ namespace yggdrasil {
     */
     //% block="build a spool with $value attached to $sprite"
     //% blockId=yggspooldefault
-    //% advanced=true
+    //% value.defl=myValue
+    //% sprite.defl=mySprite
+    //% blockSetVariable=mySpool
+    //% expandableArgumentMode=toggle
     //% group="Spools"
-    export function buildSpool(contentToPack: any, spriteToAttachTo?: Sprite): Spool {
-        let createdSpool = new Spool(contentToPack);
-        if (spriteToAttachTo != null) createdSpool.addTo(spriteToAttachTo);
+    export function buildSpool(value: any, sprite?: Sprite): Spool {
+        let createdSpool = new Spool(value);
+        if (sprite != null) createdSpool.addTo(sprite);
 
         if (shouldWarn) {
             Yggdrasil.log("Spools are experimental! Usage of experimental features may cause issues! To disable this message, set the 'shouldWarn' boolean to false.", LogTypes.WARN);
@@ -207,10 +256,13 @@ namespace yggdrasil {
     */
     //% block="build a spool with $key attached to $sprite"
     //% blockId=yggspoolkey
-    //% advanced=true
+    //% value.defl=myValue
+    //% sprite.defl=mySprite
+    //% blockSetVariable=mySpool
+    //% expandableArgumentMode=toggle
     //% group="Spools"
-    export function buildKeySpool(contentToPack: Key, sprite?: Sprite): KeySpool {
-        let createdSpool = new KeySpool(contentToPack);
+    export function buildKeySpool(value: Key, sprite?: Sprite): KeySpool {
+        let createdSpool = new KeySpool(value);
         if (sprite != null) createdSpool.addTo(sprite);
 
         if (shouldWarn) {
