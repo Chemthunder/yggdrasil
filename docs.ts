@@ -83,8 +83,6 @@ namespace yggdrasil {
     */
     //% block="pack function key with $func"
     //% blockId=yggfunctionkey
-    //% func.defl=myFunction
-    //% func.shadow=variables_get
     //% group="Keys"
     export function packFunctionKey(func: Function): FunctionKey {
         let createdKey = new FunctionKey(func);
@@ -110,6 +108,7 @@ namespace yggdrasil {
     //% block="pack image key with $img"
     //% blockId=yggimagekey
     //% img.defl=myImage
+    //% img.shadow=variables_get
     //% group="Keys"
     export function packImageKey(img: Image): ImageKey {
         let createdKey = new ImageKey(img);
@@ -122,7 +121,6 @@ namespace yggdrasil {
     */
     //% block="pack melody key with $melody"
     //% blockId=yggmelodykey
-    //% melody.defl=myMelody
     //% group="Keys"
     export function packMelodyKey(melody: music.Melody): MelodyKey {
         let createdKey = new MelodyKey(melody);
@@ -135,7 +133,6 @@ namespace yggdrasil {
     */
     //% block="pack Project key with $project"
     //% blockId=yggprojectkey
-    //% project.defl=MyProject
     //% advanced=true
     //% group="Keys"
     export function packProjectKey(project: Project): ProjectKey {
@@ -188,6 +185,8 @@ namespace yggdrasil {
     */
     //% block="build a spool with $value attached to $sprite"
     //% blockId=yggspooldefault
+    //% sprite.defl=mySprite
+    //% sprite.shadow=variables_get
     //% advanced=true
     //% group="Spools"
     export function buildSpool(contentToPack: any, spriteToAttachTo?: Sprite): Spool {
@@ -208,6 +207,7 @@ namespace yggdrasil {
     //% block="build a spool with $key attached to $sprite"
     //% blockId=yggspoolkey
     //% sprite.defl=mySprite
+    //% sprite.shadow=variables_get
     //% advanced=true
     //% group="Spools"
     export function buildKeySpool(contentToPack: Key, sprite?: Sprite): KeySpool {
