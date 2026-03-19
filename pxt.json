@@ -3,7 +3,7 @@
     "description": "A large multi-use extension centered on data, and how you can use it.",
     "dependencies": {
         "device": "*",
-        "Geode": "pub:54811-56924-17209-48782"
+        "Geode": "pub:44561-72775-66820-04014"
     },
     "files": [
         "README.md",
